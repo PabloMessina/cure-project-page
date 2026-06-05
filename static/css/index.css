@@ -1,5 +1,14 @@
 /* Modern CSS Variables for consistent theming */
 :root {
+  --event-navy: #111827;
+  --event-text: #4b5563;
+  --event-oral: #4f46e5;
+  --event-oral-light: #dfe3ff;
+  --event-oral-bg: #f8f9ff;
+  --event-poster: #f0a12b;
+  --event-poster-light: #fde7bd;
+  --event-poster-bg: #fffaf2;
+
   --primary-color: #2563eb;
   --primary-hover: #1d4ed8;
   --secondary-color: #64748b;
@@ -86,6 +95,98 @@ body {
   font-variant: small-caps;
 }
 
+
+/* Oral and Poster Event Callout */
+.event-callout-section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.event-callout {
+  border: 4px solid #e5e7eb;
+  border-radius: 0 0 42px 42px;
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.event-callout-top-bar {
+  height: 18px;
+  background: linear-gradient(90deg, var(--event-oral) 0%, var(--event-poster) 100%);
+}
+
+.event-callout-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.event-callout-panel {
+  padding: 2.5rem 2.75rem 2.25rem;
+}
+
+.event-callout-oral {
+  background: var(--event-oral-bg);
+  border-right: 3px solid #e5e7eb;
+}
+
+.event-callout-poster {
+  background: var(--event-poster-bg);
+}
+
+.event-callout-eyebrow {
+  margin: 0 0 1rem;
+  font-size: 1.35rem;
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--event-navy);
+}
+
+.event-callout-main {
+  margin: 0 0 1.1rem;
+  font-size: 1.85rem;
+  line-height: 1.04;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  color: var(--event-navy);
+}
+
+.event-callout-highlight-oral {
+  color: var(--event-oral);
+}
+
+.event-callout-highlight-poster {
+  color: var(--event-poster);
+}
+
+.event-callout-details {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--event-text);
+}
+
+.event-callout-location {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.event-callout-after {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  padding: 0.4rem 0.75rem 0.45rem;
+  border-radius: 999px;
+  background: var(--event-poster-light);
+  color: #a16207;
+  font-size: 0.85rem;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
 
 /* Hero Section Modernization */
 .hero {
@@ -600,6 +701,31 @@ code {
 
 /* Mobile Responsive Improvements */
 @media screen and (max-width: 768px) {
+  .event-callout-content {
+    grid-template-columns: 1fr;
+  }
+
+  .event-callout-oral {
+    border-right: none;
+    border-bottom: 3px solid #e5e7eb;
+  }
+
+  .event-callout-panel {
+    padding: 2rem 1.5rem 1.75rem;
+  }
+
+  .event-callout-main {
+    font-size: 1.5rem;
+  }
+
+  .event-callout-eyebrow {
+    font-size: 1.15rem;
+  }
+
+  .event-callout-details {
+    font-size: 1.05rem;
+  }
+
   .hero-body {
     padding: 2rem 1rem;
   }

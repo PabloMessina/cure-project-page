@@ -370,6 +370,49 @@
       </div>
     </section>
 
+<!-- Oral and poster callout -->
+<section class="section event-callout-section">
+  <div class="container is-max-desktop">
+    <section class="event-callout" aria-label="Oral and poster presentation information">
+      <div class="event-callout-top-bar"></div>
+
+      <div class="event-callout-content">
+        <article class="event-callout-panel event-callout-oral">
+          <p class="event-callout-eyebrow">Come see our oral!</p>
+
+          <p class="event-callout-main">
+            Talk 1: <span class="event-callout-highlight-oral">CURE</span>
+          </p>
+
+          <p class="event-callout-details">
+            Oral Session 6C<br />
+            Medical Vision<br />
+            14:00–15:15
+            <span class="event-callout-location">Mile High Ballroom 1A–2A</span>
+          </p>
+        </article>
+
+        <article class="event-callout-panel event-callout-poster">
+          <span class="event-callout-after">After the oral</span>
+
+          <p class="event-callout-eyebrow">Visit our poster!</p>
+
+          <p class="event-callout-main">
+            Poster 11: <span class="event-callout-highlight-poster">CURE</span>
+          </p>
+
+          <p class="event-callout-details">
+            Poster Session 6<br />
+            ExHall A<br />
+            15:30–17:30
+          </p>
+        </article>
+      </div>
+    </section>
+  </div>
+</section>
+<!-- End oral and poster callout -->
+
 <!-- Teaser images -->
 <section class="hero teaser">
   <div class="container is-max-desktop">
@@ -426,6 +469,28 @@ Code is available at <a href="https://github.com/PabloMessina/CURE" target="_bla
   </div>
 </section>
 <!-- End paper abstract -->
+
+<!-- Paper poster -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Poster</h2>
+
+      <img
+        src="static/images/poster.png"
+        alt="CURE CVPR 2026 poster"
+        loading="lazy"
+        style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #dbdbdb; box-shadow: 0 4px 6px rgba(0,0,0,0.05);"
+      />
+
+      <h2 class="subtitle has-text-centered" style="margin-top: 20px;">
+        CVPR 2026 poster.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End paper poster -->
+
 
 
 <!-- Image carousel -->
@@ -484,16 +549,9 @@ Code is available at <a href="https://github.com/PabloMessina/CURE" target="_bla
         </div>
         
         <div class="item">
-          <img src="static/images/slide_11.png" alt="Chart showing dynamic reweighting across datasets" loading="lazy" style="border-radius: 8px; border: 1px solid #dbdbdb; margin-bottom: 15px;"/>
+          <img src="static/images/slide_11.png" alt="Chart showing dynamic reweighting across datasets and classes" loading="lazy" style="border-radius: 8px; border: 1px solid #dbdbdb; margin-bottom: 15px;"/>
           <h2 class="subtitle has-text-centered">
-            <strong>Dataset Reweighting:</strong> The curriculum dynamically increases the sampling rate for harder datasets during training, prioritizing datasets like PadChest-GR.
-          </h2>
-        </div>
-        
-        <div class="item">
-          <img src="static/images/slide_12.png" alt="Chart showing dynamic reweighting across MS-CXR classes" loading="lazy" style="border-radius: 8px; border: 1px solid #dbdbdb; margin-bottom: 15px;"/>
-          <h2 class="subtitle has-text-centered">
-            <strong>Class Reweighting:</strong> Within datasets, the curriculum successfully prioritizes harder classes, such as Pneumothorax and Lung Opacity.
+            <strong>Dynamic Reweighting at Two Levels:</strong> We apply reweighting both across datasets and within datasets. For example, PadChest-GR with Grounded Report Generation is the hardest dataset over time and is sampled more frequently. Within a dataset, easier classes like Cardiomegaly are sampled less, while harder findings are sampled more.
           </h2>
         </div>
         
@@ -526,7 +584,14 @@ Code is available at <a href="https://github.com/PabloMessina/CURE" target="_bla
         </div>
         
         <div class="item">
-          <img src="static/images/slide_18.png" alt="Summary of contributions, results, and takeaways" loading="lazy" style="border-radius: 8px; border: 1px solid #dbdbdb; margin-bottom: 15px;"/>
+          <img src="static/images/slide_18.png" alt="Ablation results: comparison of curriculum vs naive sampling" loading="lazy" style="border-radius: 8px; border: 1px solid #dbdbdb; margin-bottom: 15px;"/>
+          <h2 class="subtitle has-text-centered">
+            <strong>Ablation: Curriculum vs. Naive Sampling:</strong> Comparing our error-aware curriculum to naive sampling, naive sampling wins by a narrow margin on the Chest ImaGenomeno dataset. However, on all other datasets, the curriculum approach outperforms by wide margins, confirming that our curriculum effectively helps to address data imbalance.
+          </h2>
+        </div>
+
+        <div class="item">
+          <img src="static/images/slide_19.png" alt="Summary of contributions, results, and takeaways" loading="lazy" style="border-radius: 8px; border: 1px solid #dbdbdb; margin-bottom: 15px;"/>
           <h2 class="subtitle has-text-centered">
             <strong>Summary & Takeaways:</strong> CURE introduces AGRG and an error-aware curriculum, leading to fewer hallucinations and better grounding. Key takeaway: ground normal anatomy too.
           </h2>
@@ -537,28 +602,6 @@ Code is available at <a href="https://github.com/PabloMessina/CURE" target="_bla
   </div>
 </section>
 <!-- End image carousel -->
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Poster</h2>
-
-      <img
-        src="static/images/poster.png"
-        alt="CURE CVPR 2026 poster"
-        loading="lazy"
-        style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #dbdbdb; box-shadow: 0 4px 6px rgba(0,0,0,0.05);"
-      />
-
-      <h2 class="subtitle has-text-centered" style="margin-top: 20px;">
-        CVPR 2026 poster.
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End paper poster -->
 
 
 <!-- Acknowledgements -->
