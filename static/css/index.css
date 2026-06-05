@@ -731,7 +731,6 @@ a:focus {
   outline-offset: 2px;
 }
 
-
 /* Print styles */
 @media print {
   .more-works-container {
@@ -748,6 +747,3 @@ a:focus {
     box-shadow: none !important;
   }
 }
-
-
-
