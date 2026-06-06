@@ -436,10 +436,19 @@ body {
   font-size: 1.1rem;
   line-height: 1.8;
   color: var(--text-secondary);
+  overflow-wrap: break-word;
 }
 
 .content.has-text-justified p {
   margin-bottom: 1.5rem;
+}
+
+.content.has-text-justified a {
+  overflow-wrap: anywhere;
+}
+
+.column.is-four-fifths {
+  min-width: 0;
 }
 
 /* Footer Improvements */
